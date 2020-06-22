@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OOP.BL
 {
-    class Address
+    public class Address
     {
         public Address()
         { 
