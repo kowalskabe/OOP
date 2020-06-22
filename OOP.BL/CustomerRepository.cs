@@ -8,6 +8,13 @@ namespace OOP.BL
 {
     public class CustomerRepository
     {
+        public CustomerRepository()
+        {
+            AddressRepository = new AddressRepository();
+        }
+        private AddressRepository AddressRepository { get; set; }
+
+
         public Customer Retrieve(int customerId)
         {
             Customer customer = new Customer(customerId);
@@ -17,6 +24,7 @@ namespace OOP.BL
                 customer.EmailAddress = "kowalskab389@gmail.com";
                 customer.FirstName = "Barbara";
                 customer.LastName = "Kowalska";
+                customer.AddressList = AddressRepository.RetriveByCustomerId(1).ToList();
             }
             return customer;
         }
